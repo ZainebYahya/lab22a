@@ -1,0 +1,45 @@
+﻿
+@{
+	ViewBag.Title = "show";
+}
+
+<h2>Our Items</h2>
+
+
+<table class="table">
+	<tr>
+		<th>Item Name</th>
+		<th>Item Quantity</th>
+		<th>Item Price</th>
+		<th>Item Des</th>
+		<th>Item photo</th>
+		<th>Update</th>
+
+	</tr>
+	@foreach (var i in ViewBag.itemlist)
+	{
+
+
+	<tr>
+		<td>
+			@i.Name
+		</td>
+		<td>
+			@i.Quantity
+		</td>
+		<td>
+			@i.price
+		</td>
+		<td>
+			@i.description
+		</td>
+		<td>
+			<img src="@Url.Content(i.photo)" alt="@i.photoname" />
+		</td>
+		<td>
+			<a href="/Home/GetItemsByCID?itemID=@i.itemID">Update</a>
+		</td>
+
+	</tr>
+	}
+</table>

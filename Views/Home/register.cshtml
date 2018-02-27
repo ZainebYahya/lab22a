@@ -1,0 +1,58 @@
+﻿
+@{
+	ViewBag.Title = "register";
+}
+
+<h2>register</h2>
+
+
+<h2>Registration</h2>
+
+<form id="registerform" action="/Home/AddNewCustomer" method="get" onsubmit="return validate()">
+	<b>First Name:</b><br>
+	<input type="text" name="firstname" id="Name" placeholder="Letters Only" required /><br /><br />
+	<b>Last Name</b><br>
+	<input type="text" name="lastname" id="lastname" placeholder="Letters Only" required /><br /><br />
+	<b>Cell Phone:</b><br>
+	<input type="text" name="phonenumber" id="cellphone"  placeholder="Numbers Only " /><br /><br />
+	<b>Zip code:</b><br>
+	<input type="number" name="Zipcode" id="Zipcode"placeholder="Numbers Only" /><br /><br />
+	<b>Email:</b><br>
+	<input type="email" name="email" id="email" placeholder="Email Format" /><br /><br />
+	<b>Password:</b><br>
+	<input type="password" name="password" id="password" placeholder="min 8 char" required /><br /><br /><br /><br />
+	<input type="submit" value="Register " />
+</form>
+<script>
+	function validate() {
+		
+		var regObject = {
+			firstname: document.getElementById("Name").value,
+			email: document.getElementById("email").value,
+			Zipcode: document.getElementById("Zipcode").value,
+			password: document.getElementById("password").value,
+
+		};
+
+
+		var reGexName = /^[a-zA-Z]{1,}$/;
+		var reGexEmail = /^[a-zA-Z0-9.,?><!#$%^&*()]{1,}[@Html.Raw("@")]{1,}[a-zA-Z]{1,5}[.]{1,1}[a-zA-Z]{2,}$/;
+		var zipcode = /^[0-9]{5,}$/;
+		var reGexPass = /^[a-zA-z0-9]{8,15}$/;
+
+
+
+		if (reGexName.test(regObject.firstname) && reGexEmail.test(regObject.email) && reGexPhone.test(regObject.Zipcode)
+			&& reGexPass.test(regObject.password)) {
+			return true;
+		}
+		else {
+			console.log(regObject.firstname);
+			console.log(regObject.email);
+			console.log(regObject.Zipcode);
+			console.log(regObject.password);
+			console.log("error");
+			return false;
+		}
+	}
+</script>

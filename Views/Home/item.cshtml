@@ -1,0 +1,20 @@
+﻿
+@{
+	ViewBag.Title = "item";
+}
+
+
+
+<h2> Items</h2>
+<form action="/Home/SearchByItemName" method="get">
+	<input type="text" name="ItemName" id="ItemName" />
+	<input type="submit" value="Search " />
+
+</form>
+<form action="/Home/displayItems" method="post">
+	<input type="submit" value="Display Items " />
+
+</form>
+
+
+

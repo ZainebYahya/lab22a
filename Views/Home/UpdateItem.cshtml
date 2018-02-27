@@ -1,0 +1,12 @@
+﻿
+
+<h2>update</h2>
+@model WebApplication15.Models.Item
+<form action="/Home/SaveChanges" method="post">
+	Item ID: <input type="text" disabled value="@ViewBag.ItemToBeUpdated.itemID" /><br /><br />
+	<input type="hidden" name="itemID" value="@ViewBag.ItemToBeUpdated.itemID" /><br /><br />
+	Name: <input type="text" name="Name" value="@ViewBag.ItemToBeUpdated.Name" /><br /><br />
+	Quantity: <input type="text" name="Quantity" value="@ViewBag.ItemToBeUpdated.Quantity" /><br /><br />
+	<input type="submit" value="Save Changes" />
+
+</form>
